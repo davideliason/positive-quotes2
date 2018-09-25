@@ -5,6 +5,7 @@ const MongoClient = require('mongodb').MongoClient;
 
 require('dotenv').config()
 app.use(bodyParser.urlencoded({extended: true}));
+app.set('view engine', 'ejs')
 
 var db;
 
@@ -15,7 +16,11 @@ MongoClient.connect(process.env.DB_HOST, (err, client) => {
 	db = client.db('positivequotes2');
 
 	app.get('/', (req,res) => {
-		res.sendFile(__dirname + '/index.html');
+		// res.sendFile(__dirname + '/index.html');
+		db.collection('quotes').find().toArray( (err,result) => {
+			if(err) return console.log(err);
+			res.render('index.ejs', { quotes: result });
+		});
 	});
 
 	app.post('/quotes', (req,res) => {
