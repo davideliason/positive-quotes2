@@ -8,6 +8,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs')
 
 var db;
+var num = 0;
 
 MongoClient.connect(process.env.DB_HOST, (err, client) => {
 	if(err) return console.log(err);
@@ -24,7 +25,12 @@ MongoClient.connect(process.env.DB_HOST, (err, client) => {
 	});
 
 	app.post('/quotes', (req,res) => {
-		db.collection('quotes').insertOne(req.body, (err, result) => {
+		num = num+1;
+		db.collection('quotes').insertOne({ 
+			_id : req.body.name + num,
+			name : req.body.name,
+			quote : req.body.quote
+		}, (err, result) => {
 			if(err) return console.log(err);
 			console.log("saved to db :" + req.body.name + " " + req.body.quote);
 		    res.redirect('/');
