@@ -6,6 +6,8 @@ const MongoClient = require('mongodb').MongoClient;
 require('dotenv').config()
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs')
+app.use(express.static('public'))
+app.use(bodyParser.json())
 
 var db;
 var num = 0;
@@ -27,7 +29,7 @@ MongoClient.connect(process.env.DB_HOST, (err, client) => {
 	app.post('/quotes', (req,res) => {
 		num = num+1;
 		db.collection('quotes').insertOne({ 
-			_id : req.body.name + num,
+			_id : req.body.name + req.body.quote,
 			name : req.body.name,
 			quote : req.body.quote
 		}, (err, result) => {
