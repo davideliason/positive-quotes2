@@ -1,0 +1,25 @@
+{
+  "name": "positive-quotes2",
+  "version": "0.0.1",
+  "description": "mern",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davideliason/positive-quotes2.git"
+  },
+  "keywords": [
+    "mern"
+  ],
+  "author": "David Eliason",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davideliason/positive-quotes2/issues"
+  },
+  "homepage": "https://github.com/davideliason/positive-quotes2#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
