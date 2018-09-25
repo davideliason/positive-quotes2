@@ -6,9 +6,9 @@ update.addEventListener('click', () => {
  		 method: 'put',
   		 headers: {'Content-Type': 'application/json'},
   		 body: JSON.stringify({
-  		   'id' : 'johntest1', 	
+  		   'id' : 'john2quote2', 	
    		   'name': 'john',
-   		   'quote': 'this is a new quote via _id4'
+   		   'quote': 'this is a new quote via _id5'
   		})
 	}).then(res => {
   if (res.ok) return res.json()
@@ -27,7 +27,7 @@ del.addEventListener('click', function () {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      'id': 'johntest1'
+      'id': 'john2quote2'
     })
   })
   .then(res => {

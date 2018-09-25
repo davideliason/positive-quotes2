@@ -55,7 +55,7 @@ MongoClient.connect(process.env.DB_HOST, (err, client) => {
 			})
 
 app.delete('/quotes', (req, res) => {
-  db.collection('quotes').findOneAndDelete({_id: 'johntest1'},
+  db.collection('quotes').findOneAndDelete({_id: req.body.id},
   (err, result) => {
     if (err) return res.send(500, err)
     console.log('deleted');
