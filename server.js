@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
+const port = process.env.PORT || 3000;
 
 require('dotenv').config()
 app.use(bodyParser.urlencoded({extended: true}));
@@ -64,7 +65,7 @@ app.delete('/quotes', (req, res) => {
 })
 
 
-	app.listen(3000, () => {
+	app.listen(port, () => {
 		console.log("server at 3000");
 	});
 
