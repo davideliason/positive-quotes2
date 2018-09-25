@@ -8,7 +8,12 @@ update.addEventListener('click', () => {
   		 body: JSON.stringify({
   		   'id' : 'johntest1', 	
    		   'name': 'john',
-   		   'quote': 'this is a new quote via _id2'
+   		   'quote': 'this is a new quote via _id3'
   		})
-	})
+	}).then(res => {
+  if (res.ok) return res.json()
+  })
+.then(data => {
+  console.log(data)
+})
 });
