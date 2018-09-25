@@ -39,6 +39,23 @@ MongoClient.connect(process.env.DB_HOST, (err, client) => {
 		});
 	});
 
+	app.put('/quotes', (req, res) => {
+  		db.collection('quotes')
+  			.findOneAndUpdate({name: 'bob2'}, {
+   				 $set: {
+     					 name: req.body.name,
+     					 quote: req.body.quote
+   				 }
+ 				 }, {
+   						 sort: {_id: -1},
+    					 upsert: true
+  				}, (err, result) => {
+   				 if (err) return res.send(err)
+    			 res.send(result)
+ 			 })
+			})
+
+
 	app.listen(3000, () => {
 		console.log("server at 3000");
 	});
