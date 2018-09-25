@@ -41,9 +41,8 @@ MongoClient.connect(process.env.DB_HOST, (err, client) => {
 
 	app.put('/quotes', (req, res) => {
   		db.collection('quotes')
-  			.findOneAndUpdate({name: 'bob2'}, {
+  			.findOneAndUpdate({_id: 'johntest1'}, {
    				 $set: {
-     					 name: req.body.name,
      					 quote: req.body.quote
    				 }
  				 }, {

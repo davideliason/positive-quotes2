@@ -6,8 +6,8 @@ update.addEventListener('click', () => {
  		 method: 'put',
   		 headers: {'Content-Type': 'application/json'},
   		 body: JSON.stringify({
-   		   'name': 'bob',
-   		   'quote': 'this is a new quote'
+   		   'name': 'john',
+   		   'quote': 'this is a new quote via _id'
   		})
 	})
 });
