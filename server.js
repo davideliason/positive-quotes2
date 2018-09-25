@@ -54,6 +54,15 @@ MongoClient.connect(process.env.DB_HOST, (err, client) => {
  			 })
 			})
 
+app.delete('/quotes', (req, res) => {
+  db.collection('quotes').findOneAndDelete({_id: 'johntest1'},
+  (err, result) => {
+    if (err) return res.send(500, err)
+    console.log('deleted');
+    res.send({message: 'deleted'})
+  })
+})
+
 
 	app.listen(3000, () => {
 		console.log("server at 3000");
