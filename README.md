@@ -16,3 +16,9 @@ Finally, the DELETE method using findOneAndDelete() to, similar to PUT, locate t
 ## Why
 This was an exercise for getting hands-on, concrete experience working with mongodb. The emphasis was on this, and not the view/UI, as you can probably tell :)
 
+## To install
+1. Clone the repo
+2. change into the project directory
+3. install needed dependencies with $ npm install
+4. $ node server.js
+5. open browser to localhost:3000
