@@ -5,10 +5,10 @@
   "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js",
-    "start" : "node server.js"
+    "start": "node server.js"
   },
-  "engines" : {
-    "node" : "8.11.4"
+  "engines": {
+    "node": "8.11.4"
   },
   "repository": {
     "type": "git",
